@@ -31,12 +31,14 @@ export default class SearchBox extends React.Component {
     }
     let codeCase = document.getElementById("caseSelect").value
 
+    let headCharType = document.getElementById("isCapital").checked ?  "upper" : "lower"
+
     // TODO プログレスバーを追加したい
     let request = {
       function: "getTranslatedText",
       parameters: {
         parameter: {
-          headCharType: "lower",
+          headCharType: headCharType,
           text: jaText,
           codeCase: codeCase,
         }
@@ -110,6 +112,10 @@ export default class SearchBox extends React.Component {
                     <option value="snake">スネークケース</option>
                     <option value="kebab">ケバブケース</option>
                 </select>
+                <p className="col-md-4 text-left">
+                    <input type="checkbox" name="isCapital" id="isCapital" />
+                    <label htmlFor="isCapital" className="is-capital-label">先頭を大文字にする</label>
+                </p>
             </div>
             <div className="row form-group">
                 <button type="button" className="form-control btn btn-primary"  onClick={this.transName.bind(this)}>変換</button>
