@@ -5,14 +5,13 @@
   padding-top: 50px;
   text-align: center;
 }
+.arrow-box {
+  padding-bottom: 1rem;
+}
 .arrow {
   text-align: center;
   font-size: 50px;
   color: gainsboro;
-}
-
-.case-view {
-  padding-top: 10px;
 }
 
 .App-logo {
