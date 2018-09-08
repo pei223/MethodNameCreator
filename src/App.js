@@ -32,7 +32,7 @@ export default class App extends React.Component {
   render() {
     // TODO BootStrapでデバイス毎にレスポンシブにする
     return (
-        <div>
+        <div className="Body">
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
