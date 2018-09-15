@@ -29,6 +29,10 @@ export default class SearchBox extends React.Component {
       alert("名前は" + config.ja_text_name_len + "文字以内にしてください")
       return
     }
+    else if (jaText.length === 0) {
+      alert("文字を入力してください")
+      return
+    }
     let codeCase = document.getElementById("caseSelect").value
 
     let headCharType = document.getElementById("isCapital").checked ?  "upper" : "lower"
@@ -45,6 +49,7 @@ export default class SearchBox extends React.Component {
       },
       devMode: true,
     }
+    this.props.showProgressBar()
     let op = window.gapi.client.request({
       root: 'https://script.googleapis.com',
       path: 'v1/scripts/' + config.API_ID + ':run',
@@ -65,6 +70,7 @@ export default class SearchBox extends React.Component {
         } else {
           // TODO エラー処理
         }
+        this.props.hideProgressBar()
       }
     }.bind(this))
   }
@@ -107,12 +113,12 @@ export default class SearchBox extends React.Component {
                 <input id="jaText" type="text" placeholder="日本語の処理・単語名" className="form-control" />
             </div>
             <div className="row form-group case-view">
-                <select name="caseSelect" className="form-control col-md-3" id="caseSelect" >
+                <select name="caseSelect" className="form-control col-12 col-sm-5 col-md-4 col-lg-4" id="caseSelect" >
                     <option value="camel">キャメルケース</option>
                     <option value="snake">スネークケース</option>
                     <option value="kebab">ケバブケース</option>
                 </select>
-                <p className="col-md-4 text-left">
+                <p className="col-12 col-sm-7 col-md-8 col-lg-8 text-left">
                     <input type="checkbox" name="isCapital" id="isCapital" />
                     <label htmlFor="isCapital" className="is-capital-label">先頭を大文字にする</label>
                 </p>
