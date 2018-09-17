@@ -2,12 +2,19 @@ import React from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import logo from './logo.svg'
 import progressbar from './img/progressbar.png'
+import checkmark from './img/check.png'
 import SearchBox from './SearchBox'
+import CopiedFrame from './CopiedFrame'
 import './App.css'
 
 export default class App extends React.Component {
   constructor(props){
     super(props)
+
+    this.copyEnText = this.copyEnText.bind(this)
+    this.state = {
+      isModalStateChanged: false
+    }
   }
 
   /**
@@ -24,6 +31,11 @@ export default class App extends React.Component {
     document.execCommand("copy")
     ta.parentElement.removeChild(ta)
     enTextElem.focus()
+
+    // Copiedモダルを表示させる
+    this.setState({
+      isModalStateChanged: !this.state.isModalStateChanged
+    })
   }
 
   setEnText(enText) {
@@ -62,6 +74,10 @@ export default class App extends React.Component {
             <img src={progressbar} className="progress-circle" id="progressbar" />
             <p className="progress-text">loading...</p>
           </div>
+          <CopiedFrame className="copiedFrame" isModalStateChanged={this.state.isModalStateChanged}>
+            <img src={checkmark} id="checkmark" />
+            <p>copied</p>
+          </CopiedFrame>
         </div>
     )
   }
