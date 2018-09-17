@@ -105,6 +105,46 @@ export default class SearchBox extends React.Component {
       }
   }
 
+  /**
+   * ケースの値に保存されているクッキーの値を取得して適用する
+   */
+  applyCookieValueToCase() {
+    let selectCaseNode = document.getElementById("caseSelect")
+    let cookieValue = this.getCaseFromCookie()
+    if (cookieValue !== "") {
+      selectCaseNode.value = cookieValue
+    }
+  }
+
+  /**
+   * クッキーに保存されているケースの値を取得する
+   */
+  getCaseFromCookie() {
+    const caseSelectAttribute = "caseSelect"
+    let cookies = document.cookie.split(";")
+    for (let i=0 ; i < cookies.length ; i++) {
+      let cookieItem = cookies[i].trim().split("=")
+      if (cookieItem[0] === caseSelectAttribute) {
+        return cookieItem[1]
+      }
+    }
+    return ""
+  }
+
+  /**
+   * クッキーにケースの値を保存する
+   */
+  saveCaseInCookie() {
+    const caseSelectAttribute = "caseSelect"
+    let selectCaseNode = document.getElementById("caseSelect")
+    let value = selectCaseNode.options[selectCaseNode.selectedIndex].value
+    document.cookie = caseSelectAttribute + "=" + value
+  }
+
+  componentDidMount() {
+    this.applyCookieValueToCase()
+  }
+
   render() {
     // TODO BootStrapでデバイス毎にレスポンシブにする
     return (
@@ -113,7 +153,7 @@ export default class SearchBox extends React.Component {
                 <input id="jaText" type="text" placeholder="日本語の処理・単語名" className="form-control" />
             </div>
             <div className="row form-group case-view">
-                <select name="caseSelect" className="form-control col-12 col-sm-5 col-md-4 col-lg-4" id="caseSelect" >
+                <select name="caseSelect" className="form-control col-12 col-sm-5 col-md-4 col-lg-4" id="caseSelect" onChange={this.saveCaseInCookie.bind(this)}>
                     <option value="camel">キャメルケース</option>
                     <option value="snake">スネークケース</option>
                     <option value="kebab">ケバブケース</option>

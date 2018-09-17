@@ -31,7 +31,6 @@ export default class App extends React.Component {
   }
 
   showProgressBar() {
-    document.getElementById("progressbar-box").style.display = "none"
     document.getElementById("progressbar-box").style.display = "block"
   }
   hideProgressBar() {
@@ -61,7 +60,7 @@ export default class App extends React.Component {
           </div>
           <div className="progressbar-box" id="progressbar-box">
             <img src={progressbar} className="progress-circle" id="progressbar" />
-            <p>loading...</p>
+            <p className="progress-text">loading...</p>
           </div>
         </div>
     )

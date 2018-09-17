@@ -68,6 +68,9 @@
   margin-top: 10px;
   animation: progress-spin infinite 1s linear;
 }
+.progress-text {
+  margin-bottom: 10px;
+}
 
 @keyframes progress-spin {
   from { transform: rotate(0deg); }
