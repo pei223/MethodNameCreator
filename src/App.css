@@ -41,6 +41,24 @@
   font-size: large;
 }
 
+.copiedFrame{
+  position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  opacity: 0.7;
+  border-radius: 10px;
+  background-color: aliceblue;
+  width: 150px;
+  height: 150px;
+  font-size: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
