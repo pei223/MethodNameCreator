@@ -3,22 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
     "coffee-script": "^1.12.7",
-    "gapi": "0.0.3",
-    "gapi-client": "0.0.3",
-    "googleapis": "^27.0.0",
     "react": "^16.4.2",
-    "react-bootstrap": "^0.32.3",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5",
-    "readline": "^1.3.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-command": "^0.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0"
   }
 }
