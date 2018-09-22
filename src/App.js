@@ -39,7 +39,10 @@ export default class App extends React.Component {
   }
 
   showCopiedFrame() {
-    if (!this.isCopiedModalVisible) {
+    // 文字の長さを図る
+    let enText = document.getElementById("enText").value
+
+    if ((!this.isCopiedModalVisible) && (0 < enText.length)) {
       // 排他制御
       this.isCopiedModalVisible = true
 
@@ -93,11 +96,11 @@ export default class App extends React.Component {
           </div>
           <div className="modal-box" id="progress-box">
             <img src={progressbar} className="progress-circle" id="progressbar" />
-            <p className="progress-text">loading...</p>
+            <p className="modal-text">loading...</p>
           </div>
           <div className="modal-box" id="copied-box">
             <img src={checkmark} className="check-mark" id="checkmark" />
-            <p>copied</p>
+            <p className="modal-text">copied</p>
           </div>
         </div>
     )
