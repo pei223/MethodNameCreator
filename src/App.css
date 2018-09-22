@@ -46,7 +46,7 @@
   to { transform: rotate(360deg); }
 }
 
-.progressbar-box {
+.modal-box {
   display: none;
   opacity: 0.7;
   border-radius: 10px;
@@ -72,7 +72,23 @@
   margin-bottom: 10px;
 }
 
+.check-mark {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
 @keyframes progress-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 0.7}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 0.7;}
+  100% {opacity: 0;}
 }
