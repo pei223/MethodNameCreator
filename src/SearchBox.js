@@ -35,14 +35,11 @@ export default class SearchBox extends React.Component {
     }
     let codeCase = document.getElementById("caseSelect").value
 
-    let headCharType = document.getElementById("isCapital").checked ?  "upper" : "lower"
-
     // TODO プログレスバーを追加したい
     let request = {
       function: "getTranslatedText",
       parameters: {
         parameter: {
-          headCharType: headCharType,
           text: jaText,
           codeCase: codeCase,
         }
@@ -153,15 +150,13 @@ export default class SearchBox extends React.Component {
                 <input id="jaText" type="text" placeholder="日本語の処理・単語名" className="form-control" />
             </div>
             <div className="row form-group case-view">
-                <select name="caseSelect" className="form-control col-12 col-sm-5 col-md-4 col-lg-4" id="caseSelect" onChange={this.saveCaseInCookie.bind(this)}>
+                <select name="caseSelect" className="form-control col-12 col-sm-6 col-md-5 col-lg-5" id="caseSelect" onChange={this.saveCaseInCookie.bind(this)}>
                     <option value="camel">キャメルケース</option>
+                    <option value="pascal">パスカルケース</option>
                     <option value="snake">スネークケース</option>
+                    <option value="snake_const">スネークケース(全て大文字)</option>
                     <option value="kebab">ケバブケース</option>
                 </select>
-                <p className="col-12 col-sm-7 col-md-8 col-lg-8 text-left">
-                    <input type="checkbox" name="isCapital" id="isCapital" />
-                    <label htmlFor="isCapital" className="is-capital-label">先頭を大文字にする</label>
-                </p>
             </div>
             <div className="row form-group">
                 <button type="button" className="form-control btn btn-primary"  onClick={this.transName.bind(this)}>変換</button>
