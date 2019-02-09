@@ -9,32 +9,34 @@
   text-align: center;
 }
 .app-container {
-  padding-top: 50px;
+  padding-top: 30px;
   text-align: center;
 }
 .arrow-box {
-  padding-bottom: 1rem;
+  vertical-align: top;
 }
 .arrow {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   color: gainsboro;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  animation: App-logo-spin infinite 10s linear;
+  height: 50px;
 }
 
 .App-header {
   background-color: #222;
-  height: 200px;
-  padding: 20px;
+  padding: 10px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 1.4em;
+}
+.App-sub-title {
+  font-size: 1em;
 }
 
 .App-intro {
