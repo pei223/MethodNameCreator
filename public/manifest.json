@@ -1,15 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Method Name Creator",
+  "name": "Method Name Creator",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "icon_for_pwa.png",
+      "sizes": "144x144",
+      "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "./method_name_creator.html",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000000"
 }

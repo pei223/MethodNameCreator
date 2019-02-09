@@ -14,6 +14,18 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>Method Name Creator</title>
+    <!-- PWA対応 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                 .register('/service-worker.js') // ここはservice-worker.jsのパスを指定
+                 .then(function() { console.log('Service Worker Registered'); });
+        }
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Method Name Creator">
+    <link rel="apple-touch-icon" href="icon_for_pwa.png" sizes="144x144">
   </head>
   <body>
     <noscript>
