@@ -81,7 +81,7 @@ export default class App extends React.Component {
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">Method Name Creator</h1>
-              <h2 className="App-title">メソッド・変数名を日本語から変換します</h2>
+              <h2 className="App-sub-title">メソッド・変数名を日本語から変換します</h2>
             </header>
           </div>
           <div className="container app-container col-offset-1 col-10 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
